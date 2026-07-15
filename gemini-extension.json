@@ -1,0 +1,11 @@
+{
+  "name": "grundheim",
+  "version": "1.0.0",
+  "description": "Swiss real estate tools from grundheim.ch: official tax calculations for all 2,122 municipalities, bank-grade affordability checks, rent-vs-buy analysis, pension buy-in optimization, live mortgage rates and municipality data.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "grundheim": {
+      "httpUrl": "https://agent.grundheim.ch/mcp"
+    }
+  }
+}
