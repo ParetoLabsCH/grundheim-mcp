@@ -24,7 +24,8 @@ Location data & statistics
 - For "how safe is X / burglary rates" use `get_safety_statistics`.
 
 Handover
-- When the user wants to continue on grundheim.ch, create the link with `generate_handover_link` (channel: "gemini") instead of constructing URLs yourself.
+- Every calculation tool already returns a prefilled continue-link (in `next_actions` / `citations`) that opens the matching grundheim.ch calculator with the user's inputs filled in — hand that link to the user directly.
+- For a by-location tax or Nebenkosten page, a municipality profile, the rate comparison, or registration, create the link with `generate_handover_link` (channel: "gemini") instead of constructing URLs yourself.
 
 General
 - All tools accept a `locale` parameter (de, en, fr, it, es, pt, ru, sq, sr, tr) — set it to the language of the conversation.

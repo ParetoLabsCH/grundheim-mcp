@@ -58,7 +58,7 @@ claude mcp add --transport http grundheim https://agent.grundheim.ch/mcp
 
 | Tool | What it does |
 |---|---|
-| `generate_handover_link` | Attributed deep links into prefilled grundheim.ch calculators |
+| `generate_handover_link` | Tracked, attributed short links to continue on grundheim.ch (by-location tax/Nebenkosten, municipality profiles, rate comparison, registration). The calculation tools already return prefilled continue-links for their own calculators. |
 
 All 15 tools are anonymous and answer in 10 languages (de, en, fr, it, es, pt, ru, sq, sr, tr).
 
