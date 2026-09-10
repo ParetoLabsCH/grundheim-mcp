@@ -42,6 +42,10 @@ claude mcp add --transport http grundheim https://agent.grundheim.ch/mcp
 | `compare_rent_vs_buy` | Rent vs. buy over a multi-year horizon |
 | `calculate_pension_buyin` | Pension fund buy-in: tax savings vs. private investing |
 | `benchmark_ask_price` | Whether an asking price is high or low for its location |
+| `calculate_mortgage_costs` | What a mortgage costs per month, how to split it into tranches, and how a rate rise hits |
+| `estimate_break_penalty` | Penalty for exiting a fixed mortgage early, and the rate that would justify it |
+| `evaluate_forward_mortgage` | Whether locking a rate in advance beats waiting until renewal |
+| `compare_amortization_strategies` | Paying down the second mortgage directly vs. via pillar 3a |
 | `get_mortgage_rates` | Live + historical Swiss mortgage rates (updated daily) |
 
 **Location data & statistics**
@@ -60,7 +64,7 @@ claude mcp add --transport http grundheim https://agent.grundheim.ch/mcp
 |---|---|
 | `generate_handover_link` | Tracked, attributed short links to continue on grundheim.ch (by-location tax/Nebenkosten, municipality profiles, rate comparison, registration). The calculation tools already return prefilled continue-links for their own calculators. |
 
-All 15 tools are anonymous and answer in 10 languages (de, en, fr, it, es, pt, ru, sq, sr, tr).
+All 19 tools are anonymous and answer in 10 languages (de, en, fr, it, es, pt, ru, sq, sr, tr).
 
 ## Try asking
 
@@ -69,6 +73,8 @@ All 15 tools are anonymous and answer in 10 languages (de, en, fr, it, es, pt, r
 - "Which municipalities in canton Zürich have the lowest taxes?"
 - "Is a CHF 2.4M apartment in Meilen priced above or below market?"
 - "What are current SARON mortgage rates?"
+- "What would a CHF 1.2M mortgage cost me per month, and should I fix or go SARON?"
+- "Lohnt es sich, meine Festhypothek vorzeitig aufzulösen?"
 
 ## Data & privacy
 
