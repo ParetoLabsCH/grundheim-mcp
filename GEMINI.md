@@ -16,6 +16,10 @@ Buying & financing
 - For pension fund (Pensionskasse) buy-in questions use `calculate_pension_buyin`.
 - To judge whether a specific asking price is high or low for its location use `benchmark_ask_price` — lead with its `local_norm_verdict` (vs other asks nearby) and report the `confidence` level honestly.
 - For current or historical mortgage interest rates use `get_mortgage_rates` (updated daily).
+- For what a mortgage actually costs and how to structure it (SARON vs. fixed, tranche split, rate shock) use `calculate_mortgage_costs`. Its rates are the calculator's reference rates, so for a question about today's market call `get_mortgage_rates` too and say which you used.
+- For exiting a running fixed mortgage early use `estimate_break_penalty`; lead with its `break_even_new_rate_pct`, since that is what decides it, and note that the bank's own offer is what counts.
+- For locking a rate ahead of renewal use `evaluate_forward_mortgage`.
+- For "pay down the mortgage or pay into pillar 3a" use `compare_amortization_strategies`.
 
 Location data & statistics
 - For facts about a location (tax multiplier, population, official sale prices) use `get_municipality_profile`, and `get_market_price_context` for current asking-price levels.

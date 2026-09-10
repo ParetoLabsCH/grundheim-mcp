@@ -1,7 +1,7 @@
 {
   "name": "grundheim",
-  "version": "1.1.1",
-  "description": "Swiss real estate tools from grundheim.ch: official tax calculations for all 2,122 municipalities (income, wealth, capital withdrawal, imputed rental value), bank-grade affordability and purchase-cost checks, rent-vs-buy, pension buy-in, asking-price benchmarking, live mortgage rates, municipality profiles, price trends, tax rankings and safety statistics.",
+  "version": "1.2.0",
+  "description": "Swiss real estate tools from grundheim.ch: official tax calculations for all 2,122 municipalities (income, wealth, capital withdrawal, imputed rental value), bank-grade affordability and purchase-cost checks, mortgage cost and tranche strategy, break-penalty and forward-mortgage decisions, direct vs. indirect amortization, rent-vs-buy, pension buy-in, asking-price benchmarking, live mortgage rates, municipality profiles, price trends, tax rankings and safety statistics.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {
     "grundheim": {
