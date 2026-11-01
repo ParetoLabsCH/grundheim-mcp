@@ -4,6 +4,13 @@
 
 **Endpoint:** `https://agent.grundheim.ch/mcp` (streamable HTTP, no authentication, read-only)
 
+## One-click install
+
+- **ChatGPT**: [Grundheim in the ChatGPT plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6acb3c7ce3d8819188911ef4a4ce3818), choose «Add»
+- **Claude (claude.ai)**: [Add Grundheim as a connector](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Grundheim&connectorUrl=https%3A%2F%2Fagent.grundheim.ch%2Fmcp) (dialog opens prefilled, confirm it)
+
+Step-by-step guides: [grundheim.ch/en/integrationen/claude](https://www.grundheim.ch/en/integrationen/claude) · [grundheim.ch/en/integrationen/chatgpt](https://www.grundheim.ch/en/integrationen/chatgpt)
+
 ## Install as a Gemini CLI extension
 
 ```bash
@@ -19,8 +26,9 @@ The same endpoint works everywhere MCP does:
 claude mcp add --transport http grundheim https://agent.grundheim.ch/mcp
 ```
 
-- **Claude (claude.ai)** — Settings → Connectors → Add connector → paste the endpoint URL
-- **ChatGPT** — Settings → Connectors (developer mode) → New connector → paste the endpoint URL
+- **Claude (claude.ai)** — use the install link above, or Settings → Connectors → Add custom connector → paste the endpoint URL
+- **ChatGPT** — use the directory listing above; without directory plugins: Settings → Security and login → Developer mode, then Plugins → «+» → paste the endpoint URL
+- **Cursor / VS Code** — one-click links on [grundheim.ch/en/mcp](https://www.grundheim.ch/en/mcp#clients)
 - **Gemini app** — Settings → Connected apps → Add custom app (requires Google AI Ultra)
 
 ## Tools
@@ -29,7 +37,7 @@ claude mcp add --transport http grundheim https://agent.grundheim.ch/mcp
 
 | Tool | What it does |
 |---|---|
-| `calculate_swiss_property_tax` | Income & wealth taxes for all 2,122 Swiss municipalities (official ESTV tariffs) |
+| `calculate_swiss_income_and_wealth_tax` | Income & wealth taxes for all 2,122 Swiss municipalities (official ESTV tariffs) |
 | `calculate_capital_withdrawal_tax` | Lump-sum tax on pension fund / pillar 3a withdrawals (Kapitalbezugssteuer) |
 | `calculate_imputed_rental_value` | Tax effect of the imputed rental value (Eigenmietwert), incl. the post-2028 reform |
 
@@ -46,6 +54,7 @@ claude mcp add --transport http grundheim https://agent.grundheim.ch/mcp
 | `estimate_break_penalty` | Penalty for exiting a fixed mortgage early, and the rate that would justify it |
 | `evaluate_forward_mortgage` | Whether locking a rate in advance beats waiting until renewal |
 | `compare_amortization_strategies` | Paying down the second mortgage directly vs. via pillar 3a |
+| `compare_tranche_structures` | 10-year fixed / 5-year fixed / SARON splits under six SNB rate paths over ten years (Tranchen-Planer) |
 | `get_mortgage_rates` | Live + historical Swiss mortgage rates (updated daily) |
 
 **Location data & statistics**
@@ -58,13 +67,19 @@ claude mcp add --transport http grundheim https://agent.grundheim.ch/mcp
 | `rank_municipalities_by_tax` | Cheapest / most expensive municipalities by tax multiplier in a canton |
 | `get_safety_statistics` | Burglary rates per 1,000 residents (official BFS crime data) |
 
+**Renovation**
+
+| Tool | What it does |
+|---|---|
+| `search_tradespeople` | Craft and construction companies (~35 trades) near a Swiss place, from the commercial register; free-text need in DE/FR/IT/EN |
+
 **Handover**
 
 | Tool | What it does |
 |---|---|
 | `generate_handover_link` | Tracked, attributed short links to continue on grundheim.ch (by-location tax/Nebenkosten, municipality profiles, rate comparison, registration). The calculation tools already return prefilled continue-links for their own calculators. |
 
-All 19 tools are anonymous and answer in 10 languages (de, en, fr, it, es, pt, ru, sq, sr, tr).
+All 21 tools are anonymous and answer in 10 languages (de, en, fr, it, es, pt, ru, sq, sr, tr).
 
 ## Try asking
 
@@ -73,6 +88,8 @@ All 19 tools are anonymous and answer in 10 languages (de, en, fr, it, es, pt, r
 - "Which municipalities in canton Zürich have the lowest taxes?"
 - "Is a CHF 2.4M apartment in Meilen priced above or below market?"
 - "What are current SARON mortgage rates?"
+- "Fix or SARON? Compare tranche structures for a CHF 1 million mortgage."
+- "Find a plumber near Winterthur, water in the basement."
 - "What would a CHF 1.2M mortgage cost me per month, and should I fix or go SARON?"
 - "Lohnt es sich, meine Festhypothek vorzeitig aufzulösen?"
 
@@ -81,3 +98,5 @@ All 19 tools are anonymous and answer in 10 languages (de, en, fr, it, es, pt, r
 Tools are read-only and anonymous. The gateway stores no personal data and no conversation content — only technical metadata for operations monitoring. Full guide: [grundheim.ch/en/mcp](https://www.grundheim.ch/en/mcp) · [Privacy policy](https://www.grundheim.ch/en/datenschutz) · [Imprint](https://www.grundheim.ch/de/impressum)
 
 © Grundheim / ParetoLabs, Switzerland
+
+> `calculate_swiss_income_and_wealth_tax` was called `calculate_swiss_property_tax` until October 2026; the old name still works for existing clients.
