@@ -5,7 +5,7 @@ This extension connects you to grundheim.ch's calculation engines. Use these too
 Guidance:
 
 Taxes
-- For income & wealth tax questions use `calculate_swiss_property_tax` — it covers all 2,122 Swiss municipalities. Call it once per municipality to compare locations.
+- For income & wealth tax questions use `calculate_swiss_income_and_wealth_tax` — it covers all 2,122 Swiss municipalities. Call it once per municipality to compare locations.
 - For the one-time tax on a lump-sum pension fund / pillar 3a payout use `calculate_capital_withdrawal_tax` (Kapitalbezugssteuer).
 - For the tax effect of owner-occupied imputed rent use `calculate_imputed_rental_value` (Eigenmietwert).
 
@@ -20,12 +20,16 @@ Buying & financing
 - For exiting a running fixed mortgage early use `estimate_break_penalty`; lead with its `break_even_new_rate_pct`, since that is what decides it, and note that the bank's own offer is what counts.
 - For locking a rate ahead of renewal use `evaluate_forward_mortgage`.
 - For "pay down the mortgage or pay into pillar 3a" use `compare_amortization_strategies`.
+- For how to split a mortgage between 10-year fixed, 5-year fixed and SARON under different SNB rate paths use `compare_tranche_structures`.
 
 Location data & statistics
 - For facts about a location (tax multiplier, population, official sale prices) use `get_municipality_profile`, and `get_market_price_context` for current asking-price levels.
 - For price development over time use `get_price_trend` (national index + local ZH sale-price series).
 - For "where are the lowest/highest taxes in canton X" use `rank_municipalities_by_tax`.
 - For "how safe is X / burglary rates" use `get_safety_statistics`.
+
+Renovation
+- To find tradespeople (painters, plumbers, electricians, roofers and more) near a Swiss place use `search_tradespeople`; pass the user's need in their own words and the place.
 
 Handover
 - Every calculation tool already returns a prefilled continue-link (in `next_actions` / `citations`) that opens the matching grundheim.ch calculator with the user's inputs filled in — hand that link to the user directly.
